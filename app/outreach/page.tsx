@@ -1,36 +1,13 @@
+import SiteHeader from "../components/SiteHeader";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Outreach",
+};
 export default function OutreachPage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#2B2B2B]">
-      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF8F4]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <img
-              src="/images/fruitland-logo.png"
-              alt="Fruitland Christian Fellowship"
-              className="h-12 w-12 rounded-full object-contain"
-            />
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C84C4C]">
-                Fruitland
-              </p>
-              <p className="text-lg font-black leading-tight">
-                Christian Fellowship
-              </p>
-            </div>
-          </Link>
-
-          <nav className="hidden items-center gap-7 text-sm font-semibold text-[#2B2B2B]/75 md:flex">
-            <Link href="/#welcome" className="hover:text-[#C84C4C]">Welcome</Link>
-            <Link href="/#gospel" className="hover:text-[#C84C4C]">Gospel</Link>
-            <Link href="/#calendar" className="hover:text-[#C84C4C]">Calendar</Link>
-            <Link href="/watch" className="hover:text-[#C84C4C]">Watch</Link>
-            <Link href="/outreach" className="text-[#C84C4C]">Outreach</Link>
-            <Link href="/giving" className="hover:text-[#C84C4C]">Giving</Link>
-          </nav>
-        </div>
-      </header>
+	<SiteHeader active="outreach" />
 
       {/* Hero */}
       <section className="relative overflow-hidden">

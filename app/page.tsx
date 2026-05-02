@@ -1,37 +1,14 @@
+import SiteHeader from "./components/SiteHeader";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Welcome",
+};
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#2B2B2B]">
-      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF8F4]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <img
-              src="/images/fruitland-logo.png"
-              alt="Fruitland Christian Fellowship"
-              className="h-12 w-12 rounded-full object-contain"
-            />
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C84C4C]">
-                Fruitland
-              </p>
-              <p className="text-lg font-black leading-tight">
-                Christian Fellowship
-              </p>
-            </div>
-          </Link>
-
-          <nav className="hidden items-center gap-7 text-sm font-semibold text-[#2B2B2B]/75 md:flex">
-            <a href="#welcome" className="hover:text-[#C84C4C]">Welcome</a>
-            <a href="#gospel" className="hover:text-[#C84C4C]">The Gospel</a>
-            <a href="#calendar" className="hover:text-[#C84C4C]">Calendar</a>
-	    <Link href="/watch" className="hover:text-[#C84C4C]">Watch</Link>
-            <Link href="/outreach" className="hover:text-[#C84C4C]">Outreach</Link>
-            <Link href="/giving" className="hover:text-[#C84C4C]">Giving</Link>
-          </nav>
-        </div>
-      </header>
-
+	<SiteHeader active="welcome" />
+     
       <section id="welcome" className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -192,27 +169,24 @@ export default function HomePage() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
-              ["Sunday Worship", "Every Sunday at 10:30 AM"],
-              ["Bible Study", "Wednesday evenings at 6:30 PM"],
+              [
+  		"Sunday Services",
+ 		 "Navajo Bible Study at 10:00 AM<br />Main Service at 11:00 AM",
+		],
+              ["Mid-Week Service", "Wednesday evenings at 5:30 PM"],
               ["Outreach", "Community ministry and service opportunities"],
             ].map(([title, text]) => (
               <div key={title} className="rounded-3xl border border-[#eadfce] bg-[#FAF8F4] p-6">
                 <h3 className="text-xl font-black">{title}</h3>
-                <p className="mt-3 leading-7 text-[#5f574d]">{text}</p>
+                <p
+  		className="mt-3 leading-7 text-[#5f574d]"
+  		dangerouslySetInnerHTML={{ __html: text }}
+		/>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 rounded-[2rem] border border-[#eadfce] bg-[#FAF8F4] p-5">
-            <div className="flex min-h-[300px] items-center justify-center rounded-[1.5rem] border border-dashed border-[#d8bea0] bg-white p-8 text-center">
-              <div>
-                <p className="text-2xl font-black">Church Calendar</p>
-                <p className="mt-3 max-w-xl text-[#6b554d]">
-                  Once the church calendar link is ready, we’ll embed it here.
-                </p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
