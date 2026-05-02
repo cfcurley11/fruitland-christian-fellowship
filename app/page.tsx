@@ -1,65 +1,251 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#FAF8F4] text-[#2B2B2B]">
+      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF8F4]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <Link href="/" className="flex items-center gap-3">
+            <img
+              src="/images/fruitland-logo.png"
+              alt="Fruitland Christian Fellowship"
+              className="h-12 w-12 rounded-full object-contain"
+            />
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C84C4C]">
+                Fruitland
+              </p>
+              <p className="text-lg font-black leading-tight">
+                Christian Fellowship
+              </p>
+            </div>
+          </Link>
+
+          <nav className="hidden items-center gap-7 text-sm font-semibold text-[#2B2B2B]/75 md:flex">
+            <a href="#welcome" className="hover:text-[#C84C4C]">Welcome</a>
+            <a href="#gospel" className="hover:text-[#C84C4C]">The Gospel</a>
+            <a href="#calendar" className="hover:text-[#C84C4C]">Calendar</a>
+	    <Link href="/watch" className="hover:text-[#C84C4C]">Watch</Link>
+            <Link href="/outreach" className="hover:text-[#C84C4C]">Outreach</Link>
+            <Link href="/giving" className="hover:text-[#C84C4C]">Giving</Link>
+          </nav>
+        </div>
+      </header>
+
+      <section id="welcome" className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/fruitland-field.jpg"
+            alt="Fruitland Christian Fellowship field"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F4]/95 via-[#FAF8F4]/80 to-[#FAF8F4]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F4] via-transparent to-transparent" />
+        </div>
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-24 md:grid-cols-[1fr_1fr] md:py-32">
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.32em] text-[#6E8B55]">
+              Welcome Home
+            </p>
+
+            <h1 className="max-w-4xl text-5xl font-black leading-tight tracking-tight text-[#2B2B2B] md:text-7xl">
+              Abide in Christ. <br />
+              <span className="text-[#C84C4C]">Bear Much Fruit.</span>
+            </h1>
+
+            <p className="mt-6 max-w-3xl text-xl leading-9 text-[#3f3a34]">
+              Welcome to Fruitland Christian Fellowship — a Christ-centered,
+              Bible-believing congregation with a heart to make disciples in our
+              communities and across the Navajo Nation.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5f574d]">
+              Whether you are visiting for the first time, returning to church,
+              looking for a church family, or seeking hope in Jesus Christ, you
+              are welcome here.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#gospel"
+                className="rounded-full bg-[#C84C4C] px-7 py-4 text-center font-bold text-white shadow-lg shadow-red-900/20 transition hover:bg-[#b63e3e]"
+              >
+                Hear the Gospel
+              </a>
+              <a
+                href="#visit"
+                className="rounded-full border border-[#556B45]/30 bg-white/70 px-7 py-4 text-center font-bold text-[#556B45] transition hover:border-[#C84C4C] hover:text-[#C84C4C]"
+              >
+                Plan Your Visit
+              </a>
+            </div>
+          </div>
+        <div
+  	className="min-h-[420px] rounded-[2rem] border border-white/70 bg-cover bg-center shadow-xl"
+ 	 style={{
+   	 backgroundImage: "url('/images/the-vine.png')",
+ 	 }}
+	/>  
+        </div>
+      </section>
+
+      <section className="px-6 pb-14 pt-4">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-3xl font-black md:text-5xl">
+            A church family rooted in the Word of God.
+          </h2>
+          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-[#5f574d]">
+            We gather to worship Jesus, grow in Scripture, pray for one another,
+            and encourage believers to live faithfully at home, in the church,
+            and throughout the community.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      <section id="gospel" className="px-6 py-16">
+        <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] bg-white p-6 shadow-sm md:grid-cols-[0.9fr_1.1fr] md:p-10">
+          <div className="overflow-hidden rounded-[1.5rem]">
+            <img
+              src="/images/jesus-way-sign.jpg"
+              alt="Jesus is the Way sign in the church garden"
+              className="h-full min-h-[360px] w-full object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-[#C84C4C]">
+              The Gospel of Jesus Christ
+            </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
+              The good news begins with Jesus.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[#5f574d]">
+              God created us to know Him, but sin separated us from Him. In
+              love, God sent His Son, Jesus Christ, who died on the cross for
+              our sins and rose again. Through repentance and faith in Jesus, we
+              receive forgiveness, salvation, and eternal life.
+            </p>
+
+            <div className="mt-7 rounded-3xl bg-[#F5EFE4] p-6">
+              <h3 className="text-2xl font-black">How do I respond?</h3>
+              <p className="mt-3 leading-8 text-[#5f574d]">
+                Turn to Jesus. Believe that He is Lord, that He died for your
+                sins, and that He rose again. Ask Him to forgive you, make you
+                new, and lead your life.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="visit" className="px-6 py-14">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-[#6E8B55]">
+              Worship With Us
+            </p>
+            <h2 className="mt-4 text-4xl font-black md:text-5xl">
+              There is a place for you here.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[#5f574d]">
+              Come as you are and join us as we worship, open the Bible, and
+              seek the Lord together. Fruitland Christian Fellowship is a place
+              for families, neighbors, visitors, and anyone who wants to know
+              Jesus Christ.
+            </p>
+
+            <div className="mt-7 rounded-[2rem] border border-[#eadfce] bg-white p-7 shadow-sm">
+              <h3 className="text-2xl font-black">Service Information</h3>
+              <div className="mt-5 space-y-3 text-[#5f574d]">
+                <p><strong className="text-[#2B2B2B]">Sunday Worship:</strong> 10:30 AM</p>
+                <p><strong className="text-[#2B2B2B]">Bible Study:</strong> Wednesday 6:30 PM</p>
+                <p><strong className="text-[#2B2B2B]">Location:</strong> Fruitland, New Mexico</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] shadow-xl">
+            <img
+              src="/images/fruitland-church.jpg"
+              alt="Fruitland Christian Fellowship church building"
+              className="h-full min-h-[440px] w-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="calendar" className="px-6 py-14">
+        <div className="mx-auto max-w-6xl rounded-[2rem] bg-white p-6 shadow-sm md:p-10">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-[#6E8B55]">
+            Church Life
+          </p>
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            Gather, grow, and serve together.
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-[#5f574d]">
+            Stay connected with worship services, Bible studies, outreach
+            opportunities, fellowship gatherings, and special church events.
+          </p>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {[
+              ["Sunday Worship", "Every Sunday at 10:30 AM"],
+              ["Bible Study", "Wednesday evenings at 6:30 PM"],
+              ["Outreach", "Community ministry and service opportunities"],
+            ].map(([title, text]) => (
+              <div key={title} className="rounded-3xl border border-[#eadfce] bg-[#FAF8F4] p-6">
+                <h3 className="text-xl font-black">{title}</h3>
+                <p className="mt-3 leading-7 text-[#5f574d]">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-[2rem] border border-[#eadfce] bg-[#FAF8F4] p-5">
+            <div className="flex min-h-[300px] items-center justify-center rounded-[1.5rem] border border-dashed border-[#d8bea0] bg-white p-8 text-center">
+              <div>
+                <p className="text-2xl font-black">Church Calendar</p>
+                <p className="mt-3 max-w-xl text-[#6b554d]">
+                  Once the church calendar link is ready, we’ll embed it here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-5xl rounded-[2rem] bg-[#F5EFE4] p-8 text-center md:p-12">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-[#D4A64A]">
+            John 15:5
+          </p>
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            We would love to worship with you.
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-[#5f574d]">
+            Fruitland Christian Fellowship welcomes you and your family to come
+            hear the Gospel, grow in God’s Word, and walk with us as disciples
+            of Jesus Christ.
+          </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/outreach"
+              className="rounded-full bg-[#C84C4C] px-7 py-4 font-bold text-white transition hover:bg-[#b63e3e]"
+            >
+              Learn About Outreach
+            </Link>
+            <Link
+              href="/giving"
+              className="rounded-full border border-[#556B45]/30 bg-white px-7 py-4 font-bold text-[#556B45] transition hover:border-[#C84C4C] hover:text-[#C84C4C]"
+            >
+              Giving
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
