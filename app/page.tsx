@@ -134,11 +134,34 @@ export default function HomePage() {
 
             <div className="mt-7 rounded-[2rem] border border-[#eadfce] bg-white p-7 shadow-sm">
               <h3 className="text-2xl font-black">Service Information</h3>
-              <div className="mt-5 space-y-3 text-[#5f574d]">
-                <p><strong className="text-[#2B2B2B]">Sunday Worship:</strong> 10:30 AM</p>
-                <p><strong className="text-[#2B2B2B]">Bible Study:</strong> Wednesday 6:30 PM</p>
-                <p><strong className="text-[#2B2B2B]">Location:</strong> Fruitland, New Mexico</p>
-              </div>
+		<div className="mt-5 space-y-5 text-[#5f574d]">
+
+  		<div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+   		 <span className="font-black text-[#2B2B2B]">Sunday Worship:</span>
+   		 <span>Starts at 10:30 AM - 12:00 PM</span>
+  		</div>
+
+  		<div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+   		 <span className="font-black text-[#2B2B2B]">Wednesday Bible Study:</span>
+   		 <span>Starts at 6:00 PM - 7:00 PM</span>
+ 		 </div>
+
+  		<div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+  		  <span className="font-black text-[#2B2B2B]">Location:</span>
+  		  <span>701 CR - 6100, Fruitland, NM 87416</span>
+  		</div>
+
+ 		 <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+  	  	<span className="font-black text-[#2B2B2B]">Contact:</span>
+  		  <span>(505) 374 - 8900</span>
+  		</div>
+
+  		<div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+  		  <span className="font-black text-[#2B2B2B]">Email:</span>
+  	 	 <span>FruitlandChristianFellowship@gmail.com</span>
+ 		 </div>
+
+		</div>
             </div>
           </div>
 
