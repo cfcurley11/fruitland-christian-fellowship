@@ -72,12 +72,11 @@ export default function OutreachPage() {
             </div>
 
             <div className="overflow-hidden rounded-[1.5rem] border border-[#eadfce] bg-[#FAF8F4]">
-              <img
-                src="/images/outreach-navajo-monthly.jpg"
-                alt="Navajo Nation Outreach Monthly Gathering flyer"
-                className="h-auto w-full object-contain"
-              />
-            </div>
+<img
+  src="/images/outreach-navajo-monthly.jpg"
+  alt="Navajo Nation Outreach Monthly Gathering flyer"
+  className="mx-auto max-h-[520px] w-auto max-w-full object-contain md:max-h-[620px]"
+/>            </div>
           </div>
         </div>
       </section>
